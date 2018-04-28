@@ -6,8 +6,14 @@
   %tr
     %th Item
     %th Price
+    %th
+    %th
 
   -@products.each do |product|
     %tr
-      %td=link_to product.name, product_path(product)
+      %td= link_to product.name, product_path(product)
       %td= product.price
+      %td= link_to 'Edit', edit_product_path(product)
+      %td= link_to 'Delete', product_path(product),
+                            method: :delete,
+                            data: {confirm: 'Are you sure?'}

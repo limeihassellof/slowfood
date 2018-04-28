@@ -1,0 +1,35 @@
+= form_with model: @product, local: true do |form|
+
+  - if @product.errors.any?
+    %error_explanation
+      %h2
+        - pluralize(@product.errors.count, 'error')
+        Prohibited
+        this article from being saved
+      %ul
+        - @product.errors.full_messages.each do |msg|
+          %li= msg
+
+  %p
+    = form.label 'Name'
+    %br
+    = form.text_field :name
+
+  %p
+    = form.label 'Description'
+    %br
+    = form.text_area :desc
+  %p
+    = form.label 'Price'
+    %br
+    = form.number_field :price
+
+  %p
+    = form.label 'Category'
+    %br
+    = form.number_field :category_id
+
+  %p
+    =form.submit
+
+= link_to 'Back', products_path
