@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
+    @products = Product.all #all means get array with one object
   end
 
   def show
@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @product = Product.new
+    @product = Product.new# this product is empty
   end
 
   def edit
@@ -16,7 +16,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(product_params)
+    @product = Product.new(product_params)# becease of paramis, so this is populated. but it is not saved, so we need .save to save it.
     if @product.save
       redirect_to @product
     else
