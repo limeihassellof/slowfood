@@ -1,7 +1,8 @@
 %h1= @restaurant.name
 %p
   %span= @restaurant.address
-  %a{href: '/restaurants/1/edit'} edit
+  %a= link_to 'Edit', edit_restaurant_path(@restaurant)
+%p= @restaurant.desc
 
 %table
   %tr
