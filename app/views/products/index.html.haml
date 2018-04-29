@@ -1,6 +1,7 @@
-%h1 Eats Slow Food
+%h1= @restaurant.name
 %p
-  Kungsgatan 10, 132 20 Stockholm
+  %span= @restaurant.address
+  %a{href: '/restaurants/1/edit'} edit
 
 %table
   %tr

@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   def index
     @products = Product.all #all means get array with one object
+    @restaurant = Restaurant.find(1)
   end
 
   def show
